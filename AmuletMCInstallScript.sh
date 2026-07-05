@@ -6,11 +6,11 @@
 echo "Installing build dependencies..."
 if command -v apt-get &> /dev/null; then
 	echo "Debian-based system detected."
+	sudo apt-get update && upgrade -y
+	curl -LsSf https://astral.sh/uv/install.sh | sh
+    uv python install 3.12
 	sudo apt-get update
-	sudo apt install software-properties-common -y
-	sudo add-apt-repository ppa:deadsnakes/ppa -y
-	sudo apt-get update
-	sudo apt-get install -y cmake build-essential python3.12-dev python3.12-venv git libgtk-3-dev pkg-config
+	sudo apt-get install -y cmake build-essential git libgtk-3-dev pkg-config
 #elif command -v dnf &> /dev/null; then
     #echo "Red Hat-based system detected. Building on Fedora is currently broken due to a bug I can't figure out how to fix."
     #sudo dnf install -y @development-tools
@@ -25,20 +25,20 @@ fi
 
 # 2. Create and activate a Python virtual environment
 echo "Creating Python virtual environment..."
-python3.12 -m venv amulet_venv
-source amulet_venv/bin/activate
+uv venv
+source .venv/bin/activate
 
 # 3. Upgrade pip, setuptools, and wheel
 echo "Upgrading pip..."
-python3.12 -m pip install --upgrade pip setuptools wheel
+uv pip install --upgrade pip setuptools wheel
 
 # 4. Install Amulet dependencies (wxPython is required for the GUI)
 echo "Installing wxPython and dependencies..."
-python3.12 -m pip install -U wxPython --verbose
+uv pip install -U wxPython --verbose
 
 # 5. Install the latest Amulet Map Editor from PyPI
 echo "Installing Amulet Map Editor..."
-python3.12 -m pip install --upgrade --upgrade-strategy eager amulet-map-editor --verbose
+uv pip install --upgrade --upgrade-strategy eager amulet-map-editor --verbose
 
 echo "Installation complete!"
-echo "You can launch the editor anytime by activating the environment and running: python3.12 -m amulet_map_editor"
+echo "You can launch the editor anytime by activating the environment and running: uv amulet_map_editor"
