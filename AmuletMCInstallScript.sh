@@ -38,7 +38,7 @@ uv pip install -U wxPython --verbose
 
 # 5. Install the latest Amulet Map Editor from PyPI
 echo "Installing Amulet Map Editor..."
-uv pip install --upgrade --upgrade-strategy eager amulet-map-editor --verbose
+uv pip install --upgrade amulet-map-editor --verbose
 
 echo "Installation complete!"
 echo "You can launch the editor anytime by activating the environment and running: uv amulet_map_editor"
