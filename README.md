@@ -21,6 +21,7 @@ Example:
 5. To Update The Program you will need to run this specific commands everytime:
 
 export CXXFLAGS+=" -Wno-error=maybe-uninitialized"
+
 uv pip install --upgrade amulet-map-editor --verbose
 
 Credit goes to the AmuletMC Developers for keeping this option free
