@@ -16,7 +16,7 @@ elif command -v pacman &> /dev/null; then
     echo "Arch-based system detected"
     sudo pacman -Syu --needed git cmake base-devel pkgconf gtk3
 else
-    echo "Unsupported package manager. Work in progress for Arch. Fedora builds are bugged at rocksdb compiling currently. Exiting."
+    echo "Unsupported package manager. Exiting."
     exit 1
 fi
 
