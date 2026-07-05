@@ -7,6 +7,9 @@ echo "Installing build dependencies..."
 if command -v apt-get &> /dev/null; then
 	echo "Debian-based system detected."
 	sudo apt-get update
+	sudo apt install software-properties-common -y
+	sudo add-apt-repository ppa:deadsnakes/ppa -y
+	sudo apt-get update
 	sudo apt-get install -y cmake build-essential python3.12-dev python3.12-venv git libgtk-3-dev pkg-config
 #elif command -v dnf &> /dev/null; then
     #echo "Red Hat-based system detected. Building on Fedora is currently broken due to a bug I can't figure out how to fix."
