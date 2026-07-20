@@ -8,9 +8,10 @@ This is an Install Script For Amulet MC Python Version. This script currently wo
 2. After The Download make sure the shell script is executable with this command: sudo chmod +x AmuletMCInstallScript.sh
 
    Tip: You can also do it with a file explorer on Linux as well here is an example with Dolphin File Explorer on Bazzite
+   
     <img width="519" height="607" alt="Screenshot_20260705_154926" src="https://github.com/user-attachments/assets/152f6b2a-7793-49cb-a3e0-011fae8acd4e" />
 
-3. Now run the shell script perferably in a terminal instead of by itself so you can see what it outputs.
+4. Now run the shell script perferably in a terminal instead of by itself so you can see what it outputs.
 
 Example:
     
